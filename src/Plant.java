@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Plant {
     public static ArrayList<Plant> garden = new ArrayList<>();
@@ -90,5 +91,34 @@ public class Plant {
                 ", height=" + height +
                 ", edible='" + edible + '\'' +
                 '}';
+    }
+    public static void info(){
+        System.out.println("1. pamatyti sarasa");
+        System.out.println("2. prideti augala");
+        System.out.println("3. redaguoti augala");
+        System.out.println("4. istrinti augala");
+        System.out.println("5. iseiti is programos");
+    }
+    public static void printGarden(){
+        for (int i = 0; i < Plant.garden.size(); i++) {
+            System.out.println(Plant.garden.get(i));
+        }
+    }
+    public static void addAnimal(Scanner sc){
+        Plant plant = new Plant();
+        System.out.println("iveskite augalo pavadinima");
+        plant.setName(sc.nextLine());
+        System.out.println("iveskite augalo lotyniska pavadinima");
+        plant.setLatinName(sc.nextLine());
+        System.out.println("iveskite ar augalas yra vienmetis");
+        plant.setOneYear(sc.nextLine());
+        System.out.println("iveskite kuriam zemyne auga augalas");
+        plant.setGrowthRegion(sc.nextLine());
+        System.out.println("iveskite augalo auksti metrais");
+        plant.setHeight(sc.nextInt());
+        sc.nextLine();
+        System.out.println("iveskite ar augalas yra valgomas");
+        plant.setEdible(sc.nextLine());
+        Plant.garden.add(plant);
     }
 }
