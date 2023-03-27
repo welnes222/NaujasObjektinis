@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+
 public class Plant {
     public static ArrayList<Plant> garden = new ArrayList<>();
     private static int idCount = 0;
@@ -8,19 +10,15 @@ public class Plant {
     private int id;
     private String name;
     private String latinName;
-    private String oneYear;
+    private boolean oneYear;//b
     private String growthRegion;
     private int height;
-    private String edible;
-
-//    public Plant() {
-//
-//    }
+    private boolean edible;//b
 
     public Plant() {
         this.id = ++idCount;
     }
-    public Plant( String name, String latinName, String oneYear, String growthRegion, int height, String edible) {
+    public Plant( String name, String latinName, boolean oneYear, String growthRegion, int height, boolean edible) {
         this.id = ++idCount;
         this.name = name;
         this.latinName = latinName;
@@ -49,11 +47,11 @@ public class Plant {
         this.latinName = latinName;
     }
 
-    public String getOneYear() {
+    public boolean getOneYear() {
         return oneYear;
     }
 
-    public void setOneYear(String oneYear) {
+    public void setOneYear(boolean oneYear) {
         this.oneYear = oneYear;
     }
 
@@ -73,13 +71,26 @@ public class Plant {
         this.height = height;
     }
 
-    public String getEdible() {
+    public boolean getEdible() {
         return edible;
     }
 
-    public void setEdible(String edible) {
+    public void setEdible(boolean edible) {
         this.edible = edible;
     }
+
+//    @Override
+//    public String toString() {
+//        return "Plant{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", latinName='" + latinName + '\'' +
+//                ", oneYear='" + oneYear + '\'' +
+//                ", growthRegion='" + growthRegion + '\'' +
+//                ", height=" + height +
+//                ", edible='" + edible + '\'' +
+//                '}';
+//    }
 
     @Override
     public String toString() {
@@ -87,12 +98,13 @@ public class Plant {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", latinName='" + latinName + '\'' +
-                ", oneYear='" + oneYear + '\'' +
+                ", oneYear=" + (oneYear ? "taip" : "ne") +
                 ", growthRegion='" + growthRegion + '\'' +
                 ", height=" + height +
-                ", edible='" + edible + '\'' +
-                '}';
+                ", edible=" + (edible ? " taip " : "Ne");
+
     }
+
     public static void info(){
         System.out.println("1. pamatyti sarasa");
         System.out.println("2. prideti augala");
@@ -111,15 +123,17 @@ public class Plant {
         plant.setName(sc.nextLine());
         System.out.println("iveskite augalo lotyniska pavadinima");
         plant.setLatinName(sc.nextLine());
-        System.out.println("iveskite ar augalas yra vienmetis");
-        plant.setOneYear(sc.nextLine());
+        System.out.println("iveskite ar augalas yra vienmetis: jei taip - true, jeigu ne -false ");
+        plant.setOneYear(sc.nextBoolean());
+        sc.nextLine();
         System.out.println("iveskite kuriam zemyne auga augalas");
         plant.setGrowthRegion(sc.nextLine());
         System.out.println("iveskite augalo auksti metrais");
         plant.setHeight(sc.nextInt());
         sc.nextLine();
-        System.out.println("iveskite ar augalas yra valgomas");
-        plant.setEdible(sc.nextLine());
+        System.out.println("iveskite ar augalas yra valgomas:  jei taip - true, jeigu ne -false");
+        plant.setEdible(sc.nextBoolean());
+        sc.nextLine();
         Plant.garden.add(plant);
     }
 }

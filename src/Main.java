@@ -7,40 +7,40 @@ public class Main {
         Plant a2 = new Plant();
         a2.setName("Blakine kalendra");
         a2.setLatinName("Coriandrum sativum");
-        a2.setOneYear("Vientmetis");
+        a2.setOneYear(true);
         a2.setGrowthRegion("Europa");
         a2.setHeight(1);
-        a2.setEdible("taip");
+        a2.setEdible(true);
         Plant.garden.add(a2);
 
         Plant b2 = new Plant();
         b2.setName("Sosnovskio barštis");
         b2.setLatinName("Heracleum sosnowskyi");
-        b2.setOneYear("Vientmetis");
+        b2.setOneYear(true);
         b2.setGrowthRegion( "Europa" );
         b2.setHeight(5);
-        b2.setEdible("Ne");
+        b2.setEdible(false);
         Plant.garden.add(b2);
 
         Plant c2 = new Plant();
         c2.setName("bambukas");
         c2.setLatinName("Bambugu");
-        c2.setOneYear("not one year");
+        c2.setOneYear(false);
         c2.setGrowthRegion( "Azija" );
         c2.setHeight(38);
-        c2.setEdible("Ne");
+        c2.setEdible(false);
         Plant.garden.add(c2);
 
         Plant d2 = new Plant();
         d2.setName("Šermukšnis");
         d2.setLatinName("Sorbus");
-        d2.setOneYear("not one year");
+        d2.setOneYear(false);
         d2.setGrowthRegion( "Europa" );
         d2.setHeight(20);
-        d2.setEdible("Ne");
+        d2.setEdible(false);
         Plant.garden.add(d2);
-//        Plant.garden().add(new Plant("Ženšenis", "Panax", "not one year", "Azija", 1, "taip"));
-//        Plant.garden().add(new Plant("Nendrė ", "Phragmites", " vienmetis", "Europa", 2, "ne"));
+        Plant.garden.add(new Plant("Ženšenis", "Panax", false, "Azija", 1, true));
+        Plant.garden.add(new Plant("Nendrė ", "Phragmites", true, "Europa", 2, false));
 
         Scanner sc = new Scanner(System.in);
 
@@ -55,7 +55,16 @@ public class Main {
                 case 2:
                     Plant.addPlant(sc);
                     break;
+                case 3:
+                    System.out.println("fukcija laikinai negalima");
+                    break;
+                case 4:
+                    System.out.println("fukcija laikinai negalima");
+                    break;
+                case 5:
+                    System.exit(1);
+                    break;
             }
         }
     }
-}
+    }
