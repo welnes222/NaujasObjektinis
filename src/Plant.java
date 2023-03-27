@@ -12,6 +12,7 @@ public class Plant {
     private String growthRegion;
     private int height;
     private String edible;
+
 //    public Plant() {
 //
 //    }
@@ -104,7 +105,7 @@ public class Plant {
             System.out.println(Plant.garden.get(i));
         }
     }
-    public static void addAnimal(Scanner sc){
+    public static void addPlant(Scanner sc){
         Plant plant = new Plant();
         System.out.println("iveskite augalo pavadinima");
         plant.setName(sc.nextLine());

@@ -53,7 +53,7 @@ public class Main {
                 Plant.printGarden();
                     break;
                 case 2:
-                    Plant.addAnimal(sc);
+                    Plant.addPlant(sc);
                     break;
             }
         }
