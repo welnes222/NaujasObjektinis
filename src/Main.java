@@ -56,10 +56,10 @@ public class Main {
                     Plant.addPlant(sc);
                     break;
                 case 3:
-                    System.out.println("fukcija laikinai negalima");
+                    Plant.editPlant (sc);
                     break;
                 case 4:
-                    System.out.println("fukcija laikinai negalima");
+                    Plant.deletePlant(sc);
                     break;
                 case 5:
                     System.exit(1);
@@ -67,4 +67,4 @@ public class Main {
             }
         }
     }
-    }
+}

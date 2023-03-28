@@ -18,6 +18,9 @@ public class Plant {
     public Plant() {
         this.id = ++idCount;
     }
+    public Plant(int id){
+        this.id = id;
+    }
     public Plant( String name, String latinName, boolean oneYear, String growthRegion, int height, boolean edible) {
         this.id = ++idCount;
         this.name = name;
@@ -135,5 +138,45 @@ public class Plant {
         plant.setEdible(sc.nextBoolean());
         sc.nextLine();
         Plant.garden.add(plant);
+    }
+    public static void editPlant(Scanner sc){
+        System.out.println("kuri augala norite redaguoti:");
+        int id = sc.nextInt();
+        sc.nextLine();
+        for (int i = 0; i < garden.size(); i++) {
+            if(garden.get(i).id == id){
+                Plant a = new Plant(id);
+                    System.out.println("iveskite augalo pavadinima");
+                    a.setName(sc.nextLine());
+                    System.out.println("iveskite augalo lotyniska pavadinima");
+                    a.setLatinName(sc.nextLine());
+                    System.out.println("iveskite ar augalas yra vienmetis: jei taip - true, jeigu ne -false ");
+                    a.setOneYear(sc.nextBoolean());
+                    sc.nextLine();
+                    System.out.println("iveskite kuriam zemyne auga augalas");
+                    a.setGrowthRegion(sc.nextLine());
+                    System.out.println("iveskite augalo auksti metrais");
+                    a.setHeight(sc.nextInt());
+                    sc.nextLine();
+                    System.out.println("iveskite ar augalas yra valgomas:  jei taip - true, jeigu ne -false");
+                    a.setEdible(sc.nextBoolean());
+                    sc.nextLine();
+                    garden.set(i,a);
+                    return;
+                }
+            }
+
+        }
+    public static void deletePlant(Scanner sc){
+        System.out.println("kuri augala norite panaikinti:");
+        int id = sc.nextInt();
+        sc.nextLine();
+        for (int i = 0; i < garden.size(); i++) {
+            if(garden.get(i).id == id){
+                garden.remove(i);
+                return;
+            }
+        }
+
     }
 }
