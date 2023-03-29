@@ -1,7 +1,7 @@
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
-//a
+
 public class Plant {
     public static ArrayList<Plant> garden = new ArrayList<>();
     public static Scanner sc = new Scanner(System.in);
