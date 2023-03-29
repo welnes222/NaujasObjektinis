@@ -53,15 +53,18 @@ public class Main {
                 Plant.printGarden();
                     break;
                 case 2:
-                    Plant.addPlant(sc);
+                    Plant.filter();
                     break;
                 case 3:
-                    Plant.editPlant (sc);
+                    Plant.addPlant();
                     break;
                 case 4:
-                    Plant.deletePlant(sc);
+                    Plant.editPlant (sc);
                     break;
                 case 5:
+                    Plant.deletePlant(sc);
+                    break;
+                case 6:
                     System.exit(1);
                     break;
             }
