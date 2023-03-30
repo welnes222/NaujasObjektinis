@@ -116,14 +116,14 @@ public class Plant {
              a = new Plant(id);
         }
             System.out.println("iveskite augalo pavadinima");
-            a.setName(sc.nextLine());
+            a.setName(Validated.string(sc));
             System.out.println("iveskite augalo lotyniska pavadinima");
-            a.setLatinName(sc.nextLine());
+            a.setLatinName(Validated.string(sc));
             System.out.println("iveskite ar augalas yra vienmetis: jei taip - true, jeigu ne -false ");
             a.setOneYear(Validated.bool(sc));
             sc.nextLine();
             System.out.println("iveskite kuriam zemyne auga augalas");
-            a.setGrowthRegion(sc.nextLine());
+            a.setGrowthRegion(Validated.string(sc));
             System.out.println("iveskite augalo auksti metrais");
             a.setHeight(Validated.height2(sc));
             System.out.println("iveskite ar augalas yra valgomas:  jei taip - true, jeigu ne -false");
@@ -182,7 +182,7 @@ public class Plant {
     }
 public static void filterByName(){
     System.out.println("iveskite pavadinima: ");
-    String input = sc.nextLine().toLowerCase();
+    String input = sc.nextLine().toLowerCase().trim().replaceAll(" +", " ");
     int count = 0;
     for (int i = 0; i < garden.size(); i++) {
         if(garden.get(i).name.toLowerCase().contains(input)) {
@@ -196,7 +196,7 @@ public static void filterByName(){
 }
     public static void filterByLatinName(){
         System.out.println("iveskite lotyniska pavadinima: ");
-        String input = sc.nextLine().toLowerCase();
+        String input = sc.nextLine().toLowerCase().trim().replaceAll(" +", " ");
         int count = 0;
         for (int i = 0; i < garden.size(); i++) {
             if(garden.get(i).latinName.toLowerCase().contains(input)){
