@@ -124,8 +124,7 @@ public class Plant {
             System.out.println("iveskite kuriam zemyne auga augalas");
             a.setGrowthRegion(sc.nextLine());
             System.out.println("iveskite augalo auksti metrais");
-            a.setHeight(sc.nextInt());
-            sc.nextLine();
+            a.setHeight(Validated.integer(sc));
             System.out.println("iveskite ar augalas yra valgomas:  jei taip - true, jeigu ne -false");
             a.setEdible(sc.nextBoolean());
             sc.nextLine();
