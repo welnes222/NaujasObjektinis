@@ -46,8 +46,17 @@ public class Main {
 
         while(true){
          Plant.info();
-            int input = sc.nextInt();
-            sc.nextLine();
+         int input = 0;
+         boolean shouldGo = true;
+         while (shouldGo) {
+             try {
+                 input = sc.nextInt();
+                 shouldGo = false;
+             } catch (Exception e) {
+                 sc.nextLine();
+                 System.out.println(" pasirinkite tinkama varianta");
+             }
+         }
             switch (input){
                 case 1:
                 Plant.printGarden();

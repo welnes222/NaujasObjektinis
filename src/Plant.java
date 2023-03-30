@@ -150,6 +150,7 @@ public class Plant {
         System.out.println("4. kokiame zemyne auga");
         System.out.println("5. pagal auksti");
         System.out.println("6. ar augalas valgomas");
+        System.out.println("7. filtruoja tik silpni. Grizti atgal");
         int input = sc.nextInt();
         sc.nextLine();
         switch (input){
@@ -171,15 +172,25 @@ public class Plant {
             case 6:
                 filterByEdible();
                 break;
+            case 7:
+                return;
+            default:
+                System.out.println("tokios ocijos nera");
+                break;
         }
     }
 public static void filterByName(){
     System.out.println("iveskite pavadinima: ");
     String input = sc.nextLine().toLowerCase();
+    int count = 0;
     for (int i = 0; i < garden.size(); i++) {
-        if(garden.get(i).name.toLowerCase().contains(input)){
+        if(garden.get(i).name.toLowerCase().contains(input)) {
             System.out.println(garden.get(i));
+            count++;
         }
+    }
+    if(count == 0){
+        System.out.println("augalo nera. Matyt, augalas nepalaistytas nuvyto");
     }
 }
     public static void filterByLatinName(){
