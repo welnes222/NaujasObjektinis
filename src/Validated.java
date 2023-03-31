@@ -1,5 +1,8 @@
 import java.util.Scanner;
 public class Validated {
+    public static int sumInt(int a, int b){
+        return a +b;
+    }
     public static int height2(Scanner sc) {
         while (true) {
             int num = integer(sc);
